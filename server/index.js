@@ -10,9 +10,8 @@ mongoose.connect("mongodb://localhost:27017/todo").then(() => {
     console.log("Connected to MOngoDB");
 })
 
-app.get("/", (req, res) =>{
-    res.send("Hello World");
-    });
+app.use(express.json());
+app.use("/", indexRouter);
 
 
 app.listen(PORT, () => {

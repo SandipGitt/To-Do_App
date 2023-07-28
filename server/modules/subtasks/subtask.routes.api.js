@@ -5,8 +5,8 @@ router.get("/", (req, res) => {
     res.send("Hello from Subtask API!");
 });
 router.post("/", async (req, res) => {
-    const Result = await subtaskController.create(req.body);
-    res.json({data: Result});
+    const result = await subtaskController.create(req.body);
+    res.json({data: result});
 });
 
 module.exports = router;
