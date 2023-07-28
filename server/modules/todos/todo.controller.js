@@ -9,7 +9,17 @@ const create = (payload) => {
 
 const list = () => {
     //Complex aggregation
-    return todoModel.find();
+    return todoModel.aggregate([
+            {
+              '$lookup': {
+                'from': 'subtasks', 
+                'localField': '_id', 
+                'foreignField': 'todo_id', 
+                'as': 'subtasks'
+              }
+            }
+          ]
+    );
 };
 
 const getById = (id) => {
