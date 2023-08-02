@@ -45,38 +45,39 @@
 //     )
 // }
 
-// export default Garage
- // REact list
-// export default function Garage() {
-//     const cars = ['BMW', 'Audi', 'Porche'];
-//     return (
-//         <>
-//         <h1>Who lives in my garage?</h1>
-//         <ul>
-//             {cars.map((car) => < Car brand = {car} />)}
-//         </ul>
-//         </>
-//     );
-// }
-
-// function Car(props) {
-//     return <li> I am a {props.brand }</li>;
-// }
-
 //Ternary operator
-export default function Goal(props) {
-        const isGoal = props.isGoal;
-            return (
-                <>
-                { isGoal ? <MadeGoal /> : <MissedGoal/>}
-                </>
-            )
-        }
+// export default function Goal(props) {
+//     const isGoal = props.isGoal;
+//         return (
+//             <>
+//             { isGoal ? <MadeGoal /> : <MissedGoal/>}
+//             </>
+//         )
+//     }
 
-    function MissedGoal() {
-        return <h1>MISSED!</h1>;
-    }
+// function MissedGoal() {
+//     return <h1>MISSED!</h1>;
+// }
 
-    function MadeGoal() {
-        return <h1>Goal!</h1>;
-    }
+// function MadeGoal() {
+//     return <h1>Goal!</h1>;
+// }
+// export default Garage
+
+//React list
+export default function Garage() {
+    const cars = ['BMW', 'Audi', 'Porche'];
+    return (
+        <>
+        <h1>Who lives in my garage?</h1>
+        <ul>
+            {cars.map((car) => < Car brand = {car} />)}
+        </ul>
+        </>
+    );
+}
+
+function Car(props) {
+    return <li> I am a {props.brand }</li>;
+}
+
