@@ -28,21 +28,37 @@
 //     return <h1>Goal!</h1>;
 // }
 
-import React from 'react'
+// import React from 'react'
 
-// && logical Operator
-function Garage(props) {
-    const cars = props.cars;
+// // && logical Operator
+// function Garage(props) {
+//     const cars = props.cars;
+//     return (
+//     <>
+//     <h1>Garage</h1>
+//     {cars.length > 0 &&
+//     <h2>
+//         You have {cars.length} cars in your garage
+//     </h2>
+//     }
+//     </>
+//     )
+// }
+
+// export default Garage
+
+export default function Garage() {
+    const cars = ['BMW', 'Audi', 'Porche'];
     return (
-    <>
-    <h1>Garage</h1>
-    {cars.length > 0 &&
-    <h2>
-        You have {cars.length} cars in your garage
-    </h2>
-    }
-    </>
-    )
+        <>
+        <h1>Who lives in my garage?</h1>
+        <ul>
+            {cars.map((car) => < Car brand = {car} />)}
+        </ul>
+        </>
+    );
 }
 
-export default Garage
+function Car(props) {
+    return <li> I am a {props.brand }</li>;
+}
