@@ -12,22 +12,37 @@
 //     );
 // }
 
-export default function Goal(props) {
-    const isGoal = props.isGoal;
-    if (isGoal ) {
-        return <MadeGoal/>;
-    }
-    return <MissedGoal/>;
-    }
+// export default function Goal(props) {
+//     const isGoal = props.isGoal;
+//     if (isGoal ) {
+//         return <MadeGoal/>;
+//     }
+//     return <MissedGoal/>;
+//     }
 
-function MissedGoal() {
-    return <h1>MISSED!</h1>;
+// function MissedGoal() {
+//     return <h1>MISSED!</h1>;
+// }
+
+// function MadeGoal() {
+//     return <h1>Goal!</h1>;
+// }
+
+import React from 'react'
+
+// && logical Operator
+function Garage(props) {
+    const cars = props.cars;
+    return (
+    <>
+    <h1>Garage</h1>
+    {cars.length > 0 &&
+    <h2>
+        You have {cars.length} cars in your garage
+    </h2>
+    }
+    </>
+    )
 }
 
-function MadeGoal() {
-    return <h1>Goal!</h1>;
-}
-
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<Goal isGoal={false}/>);
+export default Garage
