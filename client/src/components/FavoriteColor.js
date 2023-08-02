@@ -14,9 +14,11 @@
 //     </>
 // );
 // }
-import { Button } from 'react-bootstrap';
+import {Form,Button } from 'react-bootstrap';
 import {useState} from "react";
+
 const Car = () => {
+    const [userColor, setUserColor] = useState("White");
     const [car, setCar] = useState ({
         brand: "Ford",
         model: "Mustang",
@@ -24,9 +26,9 @@ const Car = () => {
         color: "red",
     });
 
-const updateColor = () => {
+const updateColor = (color) => {
     setCar((previousState) => {
-        return {...previousState, color: "yellow"};
+        return {...previousState, color: color};
     });
 };
 return (
@@ -35,8 +37,15 @@ return (
     <h2>
         It is a {car.color} {car.model} from {car.year}
     </h2>
-    <Button variant="primary" onClick = {() => updateColor("yellow")}
-    >yellow</Button>
+    <Form.Group className="mb-3" controlId="FavouriteColor">
+        <Form.Label>Add your own color</Form.Label>
+        <Form.Control
+        type="text"
+        placeholder="Place your color name"
+        onChange={(e) => setUserColor(e.target.value)} />
+        </Form.Group>
+    <Button variant="primary" onClick = {() => updateColor(userColor)}
+    >{userColor}</Button>
     </>
 )
 }
