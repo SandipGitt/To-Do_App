@@ -51,22 +51,22 @@
 // }
 // export default Car;
 
-import { useState, useEffect } from  "react";
+// import { useState, useEffect } from  "react";
 
-const Timer = () => {
-    const [count, setCount] = useState(0);
+// const Timer = () => {
+//     const [count, setCount] = useState(0);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setCount ((count) => count +1 );
-        }, 1000);
+//     useEffect(() => {
+//         setTimeout(() => {
+//             setCount ((count) => count +1 );
+//         }, 1000);
 
-        return () => clearTimeout(Timer);
-    }, []);
-    return <h1>I,ve rendered {count} times!</h1>
-}
+//         return () => clearTimeout(Timer);
+//     }, []);
+//     return <h1>I,ve rendered {count} times!</h1>
+// }
 
-export default Timer;
+// export default Timer;
 
 
 

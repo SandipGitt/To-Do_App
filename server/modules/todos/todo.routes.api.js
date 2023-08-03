@@ -2,8 +2,9 @@ const router =require("express").Router();
 const todoController = require("./todo.controller");
 
 //Read
-router.use("/",async (req, res) => {
+router.get("/",async (req, res) => {
     const results = await todoController.list();
+    res.json({data:results})
 });
 
 //Create
