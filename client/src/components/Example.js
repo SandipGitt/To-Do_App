@@ -65,19 +65,46 @@
 // export default Garage
 
 //React list
-export default function Garage() {
-    const cars = ['BMW', 'Audi', 'Porche'];
+// export default function Garage() {
+//     const cars = ['BMW', 'Audi', 'Porche'];
+//     return (
+//         <>
+//         <h1>Who lives in my garage?</h1>
+//         <ul>
+//             {cars.map((car) => < Car brand = {car} />)}
+//         </ul>
+//         </>
+//     );
+// }
+
+// function Car(props) {
+//     return <li> I am a {props.brand }</li>;
+// }
+
+import {useEffect, useState} from "react";
+import axios from "axios";
+
+function Example() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const data = await axios ("http://localhost:3000/api/v1/todos");
+            setData(data.data);
+        };
+        fetchData();
+    }, []);
     return (
+    <div>{data && data.length > 0 && (
         <>
-        <h1>Who lives in my garage?</h1>
         <ul>
-            {cars.map((car) => < Car brand = {car} />)}
+        {data.map((todo, index) => (
+            <li key = {index}>{todo?.title}</li>
+            ))}
         </ul>
         </>
+    )}</div>
     );
 }
 
-function Car(props) {
-    return <li> I am a {props.brand }</li>;
-}
-
+export default Example;
