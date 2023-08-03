@@ -1,15 +1,17 @@
 const express = require("express");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app = express();
-
 const PORT = 3000;
-const indexRouter = require("./routes");
+
 
 mongoose.connect("mongodb://localhost:27017/todo").then(() => {
     console.log("Connected to MOngoDB");
 })
 
+const indexRouter = require("./routes");
+app.use(cors());
 app.use(express.json());
 app.use("/", indexRouter);
 

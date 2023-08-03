@@ -90,6 +90,7 @@ function Example() {
     useEffect(() => {
         async function fetchData() {
             const data = await axios ("http://localhost:3000/api/v1/todos");
+            console.log({data});
             setData(data.data);
         };
         fetchData();
