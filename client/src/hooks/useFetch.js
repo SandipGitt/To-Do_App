@@ -15,13 +15,15 @@ const useFetch = (url) => {
                 setLoading(false);
                 setData(data.data);
             }
-        } catch (error)
+        } catch (error) {
             setLoading(false);
             setError(error);
         }
     };
         fetchData();
-    }, [url];
+    }, [url]);
 
 
+return {data, loading, error};
+};
 export default useFetch;
